@@ -4,6 +4,9 @@ const photoController = require('../controllers/photoController');
 const uploadMiddleware = require('../middleware/upload');
 
 router.post('/upload', uploadMiddleware.single('photo'), photoController.uploadPhoto);
+router.post('/upscale', photoController.upscalePhoto);
+router.post('/enhance-face', photoController.enhanceFace);
+router.post('/upscale-enhance', photoController.upscaleAndEnhance);
 router.post('/remove-bg', photoController.removeBackground);
 router.post('/edit', photoController.editPhoto);
 router.post('/change-clothes', photoController.changeClothes);
